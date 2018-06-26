@@ -2,18 +2,22 @@ import React from 'react';
 
 
 export const AddPet = props => {
-    let today = (new Date().toLocaleDateString()).replace(/\//g,'-');
-    let name;
+    /*because you can't make an appointment in the past,
+        the min date for the calendar should be today
+    */
+    let today = new Date().toISOString().substr(0, 10);
+    //variables for ref for inputs
+    let name, time;
 
     const makeApt = e =>{
         e.preventDefault();
-        props.makeApt(name.value, today);
+        props.makeApt(name.value, time);
     };
 
     return(
         <form id="add-pet" onSubmit={makeApt}>
             <input ref={val=>name=val} type="text" className="pet-name" placeholder="Name"/>
-            <input type="date" min="2018-06-01"/>
+            <input ref={val=>time=val} type="date" min={today}/>
         </form>
     );
 };
