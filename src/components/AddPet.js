@@ -15,11 +15,11 @@ export const AddPet = props => {
     };
 
     return(
-        <form id="add-pet" onSubmit={makeApt}>
+        <form className="add-pet" onSubmit={makeApt}>
             <input ref={val=>name=val} type="text" className="pet-name" placeholder="Name"/>
-            <input ref={val=>owner=val} type="text" className="pet-owner"/>
+            <input ref={val=>owner=val} type="text" className="pet-owner" placeholder="Owner"/>
             <input ref={val=>time=val} type="date" min={today}/>
-            <textarea ref={val=>notes=val} className="notes"></textarea>
+            <textarea ref={val=>notes=val} className="notes" placeholder="Notes about Pet"></textarea>
             <button type="submit">Add</button>
         </form>
     );

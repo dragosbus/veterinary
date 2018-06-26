@@ -20,3 +20,68 @@
   color: #23CE6B;
   cursor: pointer;
 }
+
+.add-pet {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.add-pet input,
+.add-pet textarea{
+  height: 3.5rem;
+  width: 95%;
+  margin: 1rem auto;
+  border: 2px solid rgba(184, 197, 214, 0.733);
+  border-radius: 0.5rem;
+  padding: 1rem 2.5rem;
+  outline: none;
+  transition: border-color 0.55s ease-in;
+}
+
+.add-pet textarea {
+  resize: none;
+  height: 10rem;
+}
+
+.add-pet input:focus,
+.add-pet textarea:focus {
+  border-color: rgb(6, 118, 184);
+}
+
+.add-pet button {
+  width: 12rem;
+  padding: 1rem 2rem;
+  text-align: center;
+  border: none;
+  background: #23CE6B;
+  color: #fff;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.55s ease-in;
+}
+
+.add-pet button:hover {
+  background: rgb(32, 173, 91);
+}
+
+/*----------MEdia querys----------*/
+
+@media (min-width: 660px) {
+  .add-pet {
+    width: 65%;
+  }
+  .add-pet input {
+    width: 45%;
+  }
+}
+
+@media (min-width: 960px) {
+  .add-pet {
+    width: 45%;
+  }
+}
