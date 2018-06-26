@@ -1,6 +1,9 @@
 .main-header {
   background: #272D2D;
   padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
@@ -8,4 +11,12 @@
   letter-spacing: 1.5px;
   font-weight: 300;
   font-size: 2.5rem;
+}
+
+.form-toggler {
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  color: #23CE6B;
+  cursor: pointer;
 }
