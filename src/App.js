@@ -12,8 +12,8 @@ class App extends Component {
     this.makeApt = this.makeApt.bind(this);
   }
 
-  makeApt(name, today) {
-    console.log(name, today);
+  makeApt(name, owner, time, notes) {
+    console.log(name, owner, time, notes);
   }
 
   render() {

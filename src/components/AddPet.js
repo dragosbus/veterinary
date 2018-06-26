@@ -6,18 +6,21 @@ export const AddPet = props => {
         the min date for the calendar should be today
     */
     let today = new Date().toISOString().substr(0, 10);
-    //variables for ref for inputs
-    let name, time;
+    //variables for reference the inputs
+    let name, time, owner, notes;
 
     const makeApt = e =>{
         e.preventDefault();
-        props.makeApt(name.value, time);
+        props.makeApt(name.value, owner.value, time.value, notes.value);
     };
 
     return(
         <form id="add-pet" onSubmit={makeApt}>
             <input ref={val=>name=val} type="text" className="pet-name" placeholder="Name"/>
+            <input ref={val=>owner=val} type="text" className="pet-owner"/>
             <input ref={val=>time=val} type="date" min={today}/>
+            <textarea ref={val=>notes=val} className="notes"></textarea>
+            <button type="submit">Add</button>
         </form>
     );
 };
