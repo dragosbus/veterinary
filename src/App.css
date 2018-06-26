@@ -13,6 +13,22 @@
   font-size: 2.5rem;
 }
 
+.form-container {
+  width: 90%;
+  margin: 2.5rem auto;
+}
+
+.form-header {
+  background: #272D2D;
+  padding: 1rem;
+}
+
+.form-header h3 {
+  display: inline-block;
+  margin-left: 1rem;
+  color: #fff;
+}
+
 .form-toggler {
   background: none;
   border: none;
@@ -29,6 +45,8 @@
   align-items: center;
   flex-wrap: wrap;
   margin: 0 auto;
+  transition: transform 0.55s ease-in;
+  text-align: center;
 }
 
 .add-pet input,
@@ -72,16 +90,19 @@
 /*----------MEdia querys----------*/
 
 @media (min-width: 660px) {
-  .add-pet {
+
+  .form-container {
+    justify-content: space-between;
     width: 65%;
   }
+
   .add-pet input {
     width: 45%;
   }
 }
 
 @media (min-width: 960px) {
-  .add-pet {
+  .form-container {
     width: 45%;
   }
 }
