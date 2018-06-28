@@ -1,7 +1,9 @@
 import React from "react";
 
-export const Appointments = props => {
+export const AptList = props => {
   return(
-        <li></li>
+        <li>
+          <h3>{props.name}</h3>
+        </li>
       );
 };

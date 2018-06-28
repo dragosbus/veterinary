@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Header} from './components/Header';
 import {AddPet} from './components/AddPet';
+import {Appointments} from './components/Appointments';
 import './App.css';
 
 class App extends Component {
@@ -15,7 +16,14 @@ class App extends Component {
   }
 
   makeApt(name, owner, time, notes) {
-    console.log(name, owner, time, notes);
+    let newApt = {
+      name, owner, time, notes
+    };
+    this.setState(prevState=>{
+      return {
+        appointments: prevState.appointments.concat(newApt)
+      };
+    });
   }
 
   togglerForm() {
@@ -29,6 +37,7 @@ class App extends Component {
       <div className="App">
         <Header/>
         <AddPet makeApt={this.makeApt} showForm={this.state.showForm}  togglerForm={this.togglerForm}/>
+        <Appointments appointments={this.state.appointments}/>
       </div>
     );
   }
