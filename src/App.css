@@ -87,6 +87,60 @@
   background: rgb(32, 173, 91);
 }
 
+.apts {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+.main-infos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.apts li {
+  width: 80%;
+  margin: 1rem auto;
+  border-bottom: 1px solid rgba(9, 10, 12, 0.253);
+  padding-bottom: 2rem;
+}
+
+.apts li h3 {
+  font-size: 2rem;
+  color: rgba(45, 5, 109, 0.897);
+  margin-left: 5%;
+}
+
+.apts li span {
+  font-size: 1.6rem;
+  color: rgb(14, 109, 54);
+  margin-left: auto;
+}
+
+.apts li p {
+  font-size: 1.6rem;
+  margin: 0.5rem auto;
+  text-align: center;
+}
+
+.apts li p:first-of-type {
+  margin-top: 2rem;
+}
+
+.apts li button {
+  border: none;
+  background: rgb(218, 55, 55);
+  color: #fff;
+  padding: 0.4rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 /*----------MEdia querys----------*/
 
 @media (min-width: 660px) {

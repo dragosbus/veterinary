@@ -8,7 +8,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      appointments: [],
+      appointments: [{name:'Rufus', owner:'Mikel', time:'2018-06-29', notes:'Some note'}],
       showForm: false
     }
     this.makeApt = this.makeApt.bind(this);

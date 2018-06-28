@@ -3,8 +3,8 @@ import {AptList} from "./AppointmentElement";
 
 export const Appointments = props => {
   return(
-        <ul>
-            {props.appointments.map((apt, i)=> <AptList key={i} name={apt.name}/>)}
+        <ul className='apts'>
+            {props.appointments.map((apt, i)=> <AptList key={i} name={apt.name}owner={apt.owner} note={apt.notes} date={apt.time}/>)}
         </ul>
       );
 };
