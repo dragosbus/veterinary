@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Header} from './components/Header';
 import {AddPet} from './components/AddPet';
 import {Appointments} from './components/Appointments';
+import {Search} from './components/Search';
 import './App.css';
 
 class App extends Component {
@@ -46,6 +47,7 @@ class App extends Component {
       <div className="App">
         <Header/>
         <AddPet makeApt={this.makeApt} showForm={this.state.showForm}  togglerForm={this.togglerForm}/>
+        <Search/>
         <Appointments appointments={this.state.appointments} cancelApt={this.cancelApt}/>
       </div>
     );

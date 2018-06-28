@@ -21,6 +21,7 @@
 .form-header {
   background: #272D2D;
   padding: 1rem;
+  border-radius: 3px;
 }
 
 .form-header h3 {
@@ -145,6 +146,33 @@
   font-size: 2rem;
 }
 
+.search {
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+  margin: 0 auto;
+}
+
+.search input {
+  height: 3rem;
+  width: 80%;
+  border-radius: 5px;
+  border: 2px solid rgba(6, 12, 19, 0.253);
+}
+
+.search select {
+  position: absolute;
+  top: 10px;
+  right: 11%;
+  width: 8rem;
+  border: none;
+  background: rgb(13, 73, 204);
+  color: #fff;
+  height: 3rem;
+  border-radius: 0 5px 5px 0;
+}
+
 /*----------MEdia querys----------*/
 
 @media (min-width: 660px) {
@@ -165,6 +193,10 @@
     padding: 1rem;
     border-radius: 5px;
   }
+
+  .search {
+    width: 65%;
+  }
 }
 
 @media (min-width: 960px) {
@@ -173,5 +205,8 @@
   }
   .apts li {
     width: 30%;
+  }
+  .search {
+    width: 45%;
   }
 }
