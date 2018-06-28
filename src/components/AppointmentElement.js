@@ -4,7 +4,7 @@ export const AptList = props => {
   return(
         <li>
           <div className="main-infos">
-            <button className="cancel-apt">X</button>
+            <button className="cancel-apt" onClick={props.cancelApt}>X</button>
             <h3>{props.name}</h3>
             <span>{props.date}</span>
           </div>

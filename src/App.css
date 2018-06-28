@@ -134,11 +134,15 @@
 
 .apts li button {
   border: none;
-  background: rgb(218, 55, 55);
-  color: #fff;
-  padding: 0.4rem;
-  border-radius: 5px;
+  background: none;
+  color: rgb(218, 55, 55);
+  font-size: 1.6rem;
   cursor: pointer;
+  transition: font-size 0.55s ease-in;
+}
+
+.apts li button:hover {
+  font-size: 2rem;
 }
 
 /*----------MEdia querys----------*/
@@ -153,10 +157,21 @@
   .add-pet input {
     width: 45%;
   }
+
+  .apts li {
+    width: 45%;
+    border: none;
+    border: 1px solid rgba(9, 10, 12, 0.144);
+    padding: 1rem;
+    border-radius: 5px;
+  }
 }
 
 @media (min-width: 960px) {
   .form-container {
     width: 45%;
+  }
+  .apts li {
+    width: 30%;
   }
 }
