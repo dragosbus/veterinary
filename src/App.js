@@ -10,6 +10,7 @@ class App extends Component {
     super(props);
     this.state = {
       appointments: [],
+      appointmentsCopy: [],
       showForm: false,
       orderBy: 'sort'
     }
@@ -17,6 +18,7 @@ class App extends Component {
     this.togglerForm = this.togglerForm.bind(this);
     this.cancelApt = this.cancelApt.bind(this);
     this.sortByHandler = this.sortByHandler.bind(this);
+    this.search = this.search.bind(this);
   }
 
   makeApt(name, owner, time, notes) {
@@ -25,7 +27,8 @@ class App extends Component {
     };
     this.setState(prevState=>{
       return {
-        appointments: prevState.appointments.concat(newApt)
+        appointments: prevState.appointments.concat(newApt),
+        appointmentsCopy: prevState.appointments.concat(newApt)
       };
     });
   }
@@ -40,7 +43,8 @@ class App extends Component {
     let apts = this.state.appointments;
     apts.splice(index,1);
     this.setState({
-      appointments: apts
+      appointments: apts,
+      appointmentsCopy: apts
     });
   }
 
@@ -54,12 +58,28 @@ class App extends Component {
     });
   }
 
+  search(e) {
+    let query = e.target.value;
+    if(query) {
+      this.setState(prevState=>{
+        return {
+          appointments: prevState.appointments.filter(apt=>apt.name === query)
+        }
+      });
+    } else {
+      this.setState(prevState=>{
+        return {
+          appointments: prevState.appointmentsCopy
+        }
+      });
+    }
+  }
   render() {
     return (
       <div className="App">
         <Header/>
         <AddPet makeApt={this.makeApt} showForm={this.state.showForm}  togglerForm={this.togglerForm}/>
-        <Search orderBy={this.state.orderBy} sortByHandler={this.sortByHandler}/>
+        <Search orderBy={this.state.orderBy} sortByHandler={this.sortByHandler}search={this.search}/>
         <Appointments appointments={this.state.appointments} cancelApt={this.cancelApt}/>
       </div>
     );
