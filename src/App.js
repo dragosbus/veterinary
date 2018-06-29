@@ -9,12 +9,14 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      appointments: [{name:'Rufus', owner:'Mikel', time:'2018-06-29', notes:'Some note'}],
-      showForm: false
+      appointments: [],
+      showForm: false,
+      orderBy: 'sort'
     }
     this.makeApt = this.makeApt.bind(this);
     this.togglerForm = this.togglerForm.bind(this);
     this.cancelApt = this.cancelApt.bind(this);
+    this.sortByHandler = this.sortByHandler.bind(this);
   }
 
   makeApt(name, owner, time, notes) {
@@ -42,12 +44,22 @@ class App extends Component {
     });
   }
 
+  sortByHandler(e) {
+    let orderBy = e.target.value;
+    this.setState(prevState=>{
+      return {
+        orderBy: orderBy,
+        appointments: prevState.appointments.sort((a,b)=> a[orderBy] > b[orderBy] ? 1 : -1)
+      };
+    });
+  }
+
   render() {
     return (
       <div className="App">
         <Header/>
         <AddPet makeApt={this.makeApt} showForm={this.state.showForm}  togglerForm={this.togglerForm}/>
-        <Search/>
+        <Search orderBy={this.state.orderBy} sortByHandler={this.sortByHandler}/>
         <Appointments appointments={this.state.appointments} cancelApt={this.cancelApt}/>
       </div>
     );
