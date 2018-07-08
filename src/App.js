@@ -61,17 +61,9 @@ class App extends Component {
   search(e) {
     let query = e.target.value;
     let filteredApt = this.state.appointmentsCopy;
-    if(query) {
-      this.setState({
-        appointments: filteredApt.filter(apt=>apt.name.indexOf(query) >= 0)
-      });
-    } else {
-      this.setState(prevState=>{
-        return {
-          appointments: prevState.appointmentsCopy
-        }
-      });
-    }
+    this.setState({
+      appointments: filteredApt.filter(apt=>apt.name.indexOf(query) >= 0)
+    });
   }
   render() {
     return (
