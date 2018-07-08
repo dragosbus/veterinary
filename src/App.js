@@ -60,11 +60,10 @@ class App extends Component {
 
   search(e) {
     let query = e.target.value;
+    let filteredApt = this.state.appointmentsCopy;
     if(query) {
-      this.setState(prevState=>{
-        return {
-          appointments: prevState.appointments.filter(apt=>apt.name === query)
-        }
+      this.setState({
+        appointments: filteredApt.filter(apt=>apt.name.indexOf(query) >= 0)
       });
     } else {
       this.setState(prevState=>{
@@ -78,9 +77,19 @@ class App extends Component {
     return (
       <div className="App">
         <Header/>
-        <AddPet makeApt={this.makeApt} showForm={this.state.showForm}  togglerForm={this.togglerForm}/>
-        <Search orderBy={this.state.orderBy} sortByHandler={this.sortByHandler}search={this.search}/>
-        <Appointments appointments={this.state.appointments} cancelApt={this.cancelApt}/>
+        <AddPet 
+          makeApt={this.makeApt} 
+          showForm={this.state.showForm}  
+          togglerForm={this.togglerForm}
+        />
+        <Search 
+          orderBy={this.state.orderBy} 
+          sortByHandler={this.sortByHandler}
+          search={this.search}
+        />
+        <Appointments 
+          appointments={this.state.appointments} cancelApt={this.cancelApt}
+        />
       </div>
     );
   }
